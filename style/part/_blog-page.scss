@@ -1,0 +1,70 @@
+.blog-page{margin: 45px 0 150px;}
+.blog-page h2{font-size: 27px; line-height: 40px; letter-spacing: -0.14px; font-weight: 600; margin-bottom: 25px!important; text-align: center;}
+.blog-page .ui-widget.ui-widget-content{border: 1px solid #fff!important;}
+.blog-page .ui-tabs .ui-tabs-nav {margin: 0;padding: 5px 0;}
+.blog-page .ui-widget-header{    border: 1px solid #fff;background: #fff;}
+.blog-page .ui-tabs .ui-tabs-nav li{float: none!important;}
+.blog-page .ui-tabs .ui-tabs-panel{padding: 0!important;}
+
+
+#tabs ul{text-align: center; margin-bottom: 70px;;}
+#tabs ul li{list-style: none; display: inline-block; margin: 0 15px; border: none!important; border-radius: 5px;}
+#tabs ul li a{color: #575A5C;font-size: 14px;padding: 10px 20px;display: inline-block;background-color: #fff;}
+#tabs ul li.ui-state-active a{background: #EAECEE; border-radius: 5px;}
+#tabs .ui-state-active,#tabs .ui-widget-content .ui-state-active,#tabs .ui-widget-header .ui-state-active{border: none!important; background: none!important;}
+
+.main-blog img{width: 100%; height: 490px; object-fit: cover; margin-bottom: 75px;border-radius: 10px;}
+.main-blog .right-section span{font-size: 17px; line-height: 26px; display: inline-block; margin-bottom: 30px; color: #575A5C;}
+.main-blog .right-section h1{font-size: 40px; line-height: 53px; letter-spacing: -0.2px; font-weight: 600; margin-bottom: 30px; color: #04141C;}
+.main-blog .right-section p{font-size: 21px; line-height: 32px; color: #575A5C;    font-family: "LL Circular Pro Book Web", sans-serif !important;}
+
+.box-blog{margin-bottom: 40px; min-height: 660px;}
+.box-blog img{height: 370px; width: 100%; object-fit: cover;margin-bottom: 40px;border-radius: 10px;}
+.box-blog span{font-size: 15px; display: inline-block; margin-bottom: 20px; color: #575A5C;font-family: "LL Circular Pro Book Web", sans-serif !important;}
+.box-blog h2{color: #04141C; font-size: 30px; line-height: 40px; letter-spacing: -0.2px; margin-bottom: 12px; text-align: left;}
+.box-blog p{color: #575A5C; font-size: 17px; line-height: 25px; font-family: "LL Circular Pro Book Web", sans-serif !important;}
+
+.img-box-grey{border-radius: 10px; width: 100%; background-color: #F4F4F4; margin-bottom: 40px; height: 370px;}
+
+#cat-hamburger{display: none;}
+
+#cat-hamburger{
+    background-image: url(../assets/images/minus.svg)!important;
+    background-repeat: no-repeat!important;
+    background-size: 15px!important;
+    background-position-x: 95%!important;
+    background-position-y: center!important;
+}
+#cat-hamburger.cat-on{
+    background-image: url(../assets/images/plus.svg)!important;
+}
+
+.clear-filter{display: none!important;}
+@media(max-width: 800px){
+    .main-blog{margin-top: 23px;}
+    .main-blog .col-7, .main-blog .col-5{flex: 0 0 100%;max-width: 100%;}
+    .main-blog img{border-radius: 10px;height: 130px; margin-bottom: 12px;}
+    .main-blog .right-section span{font-size: 12px; margin-bottom: 10px!important;}
+    .main-blog .right-section h1{font-size: 17px; line-height: 26px; margin-bottom: 12px;}
+    .main-blog .right-section p{font-size: 16px;line-height: 24px;margin-bottom: 24px;}
+
+    .box-blog img{border-radius: 10px;height: 130px; margin-bottom: 12px;}
+    .box-blog span{font-size: 12px;}
+    .box-blog h2{font-size: 17px; line-height: 26px; margin-bottom: 12px;}
+    .box-blog p{font-size: 16px;line-height: 24px;}
+    .box-blog {margin-bottom: 24px;min-height: auto;}
+
+    #tabs ul{text-align: left; box-shadow: 0px 3px 6px #00000029; padding: 0!important;display: none;}
+    #tabs ul li{list-style: none;display: block;margin: 0;background-color: #FBFBFB; border-bottom: 1px solid #00000029;}
+    #tabs ul li a{display: block;font-size: 14px; font-weight: 500;width: 100%;background: #FBFBFB;border-bottom: 1px solid #00000029; color: #04141C;}
+    #tabs ul li.ui-state-active a{border-radius: 0; background-color: #FBFBFB; color: #04141C; font-weight: 600;}
+
+    #cat-hamburger{display:block; background: #fff;padding: 9px 20px;border-bottom: 1px solid #00000029;border-top: 1px solid #00000029;}
+    #cat-hamburger svg{width: 25px; height: 25px; float: right;}
+    #current-span{display: inline-block;}
+
+    .blog-page .ui-tabs{padding: 0!important;}
+    .clear-filter{display: block!important; color: #A0A4A7!important;}
+
+    .img-box-grey{height: 130px;margin-bottom: 12px;}
+}

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="style/style.css" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<div class="header">header</div>
+<body>
+<section id="search-page">
+    <div class="content-block">
+        <section class="site-breadcrumb">
+            <div class="content-block">
+                <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+                    <li class="breadcrumb-item">
+                    <a href="">Category</a>
+                    </li>
+                </ol>
+                </nav>
+            </div>
+        </section>
+
+        <div class="row">
+            <div class="col-3">
+                <div class="filter-bar-responsive">
+                    <h2>Tours</h2>
+                    <div id="cat-filter" onchange="btn()">
+                        <strong>Filters: <div id="current-span"></div></strong>
+                    </div>
+
+                    <ul id="all-filter">
+                        <button class="accordion">Sort by: <strong>Recommended</strong></button>
+                        <div class="panel">
+                            <label class="checkbox">
+                                <input type="checkbox" />
+                                <span>Recommended</span>
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" />
+                                <span>Price (low to high)</span>
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" />
+                                <span>Price (high to low)</span>
+                            </label>
+                        </div>
+                        <button class="accordion">From-to: <strong>Apr - 30 Apr 2021</strong></button>
+                        <div class="panel calendar">
+                            <center>
+                                <script language="javascript" type="text/javascript">
+                                var day_of_week = new Array('Sun','Mon','Tue','Wed','Thu','Fri','Sat');
+                                var month_of_year = new Array('January','February','March','April','May','June','July','August','September','October','November','December');
+                                
+                                //  DECLARE AND INITIALIZE VARIABLES
+                                var Calendar = new Date();
+                                
+                                var year = Calendar.getFullYear();     // Returns year
+                                var month = Calendar.getMonth();    // Returns month (0-11)
+                                var today = Calendar.getDate();    // Returns day (1-31)
+                                var weekday = Calendar.getDay();    // Returns day (1-31)
+                                
+                                var DAYS_OF_WEEK = 7;    // "constant" for number of days in a week
+                                var DAYS_OF_MONTH = 31;    // "constant" for number of days in a month
+                                var cal;    // Used for printing
+                                
+                                Calendar.setDate(1);    // Start the calendar day at '1'
+                                Calendar.setMonth(month);    // Start the calendar month at now
+                                
+                                
+                                /* VARIABLES FOR FORMATTING
+                                NOTE: You can format the 'BORDER', 'BGCOLOR', 'CELLPADDING', 'BORDERCOLOR'
+                                    tags to customize your caledanr's look. */
+                                
+                                var TR_start = '<TR>';
+                                var TR_end = '</TR>';
+                                var highlight_start = '<TD WIDTH="30"><TABLE CELLSPACING=0 BORDER=1 BGCOLOR=DEDEFF BORDERCOLOR=CCCCCC><TR><TD WIDTH=20><B><CENTER>';
+                                var highlight_end   = '</CENTER></TD></TR></TABLE></B>';
+                                var TD_start = '<TD WIDTH="30"><CENTER>';
+                                var TD_end = '</CENTER></TD>';
+                                
+                                /* BEGIN CODE FOR CALENDAR
+                                NOTE: You can format the 'BORDER', 'BGCOLOR', 'CELLPADDING', 'BORDERCOLOR'
+                                tags to customize your calendar's look.*/
+                                
+                                cal =  '<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=0 BORDERCOLOR=BBBBBB><TR><TD>';
+                                cal += '<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=2>' + TR_start;
+                                cal += '<TD COLSPAN="' + DAYS_OF_WEEK + '" BGCOLOR="#EFEFEF"><CENTER><B>';
+                                cal += month_of_year[month]  + '   ' + year + '</B>' + TD_end + TR_end;
+                                cal += TR_start;
+                                
+                                //   DO NOT EDIT BELOW THIS POINT  //
+                                
+                                // LOOPS FOR EACH DAY OF WEEK
+                                for(index=0; index < DAYS_OF_WEEK; index++)
+                                {
+                                
+                                // BOLD TODAY'S DAY OF WEEK
+                                if(weekday == index)
+                                cal += TD_start + '<B>' + day_of_week[index] + '</B>' + TD_end;
+                                
+                                // PRINTS DAY
+                                else
+                                cal += TD_start + day_of_week[index] + TD_end;
+                                }
+                                
+                                cal += TD_end + TR_end;
+                                cal += TR_start;
+                                
+                                // FILL IN BLANK GAPS UNTIL TODAY'S DAY
+                                for(index=0; index < Calendar.getDay(); index++)
+                                cal += TD_start + '  ' + TD_end;
+                                
+                                // LOOPS FOR EACH DAY IN CALENDAR
+                                for(index=0; index < DAYS_OF_MONTH; index++)
+                                {
+                                if( Calendar.getDate() > index )
+                                {
+                                // RETURNS THE NEXT DAY TO PRINT
+                                week_day =Calendar.getDay();
+                                
+                                // START NEW ROW FOR FIRST DAY OF WEEK
+                                if(week_day == 0)
+                                cal += TR_start;
+                                
+                                if(week_day != DAYS_OF_WEEK)
+                                {
+                                
+                                // SET VARIABLE INSIDE LOOP FOR INCREMENTING PURPOSES
+                                var day  = Calendar.getDate();
+                                
+                                // HIGHLIGHT TODAY'S DATE
+                                if( today==Calendar.getDate() )
+                                cal += highlight_start + day + highlight_end + TD_end;
+                                
+                                // PRINTS DAY
+                                else
+                                cal += TD_start + day + TD_end;
+                                }
+                                
+                                // END ROW FOR LAST DAY OF WEEK
+                                if(week_day == DAYS_OF_WEEK)
+                                cal += TR_end;
+                                }
+                                
+                                // INCREMENTS UNTIL END OF THE MONTH
+                                Calendar.setDate(Calendar.getDate()+1);
+                                
+                                }// end for loop
+                                
+                                cal += '</TD></TR></TABLE></TABLE>';
+                                
+                                //  PRINT CALENDAR
+                                document.write(cal);
+                                
+                                //  End -->
+                                </script>
+                                </center>
+                                <div style="clear:both"></div>
+                        </div>
+
+                        <button class="accordion">{Category} Type</button>
+                        <div class="panel">
+                            lorem
+                        </div>
+
+                        <button class="accordion">Venues</button>
+                        <div class="panel">
+                            Lorem
+                        </div>
+
+                        <button class="accordion">Price per person</button>
+                        <div class="panel">
+                            Lorem
+                    </div>
+
+                    <button class="accordion">Mobile Friendly</button>
+                    <div class="panel">
+                        lorem
+                    </div>
+
+                    <span class="clear"><strong>
+                        <svg fill="#A0A4A7" width="12" height="12" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            viewBox="0 0 371.23 371.23" style="enable-background:new 0 0 371.23 371.23;" xml:space="preserve">
+                        <polygon points="371.23,21.213 350.018,0 185.615,164.402 21.213,0 0,21.213 164.402,185.615 0,350.018 21.213,371.23 
+                            185.615,206.828 350.018,371.23 371.23,350.018 206.828,185.615 "/>
+                        <g>
+                        </g>
+                        </svg>
+                    </strong> Clear all filters</span>
+                    </ul>
+
+
+
+
+                    <script>
+                        var open = 0;
+                        $( "#cat-filter" ).click(function() {
+                            if(open == 0){
+                                $( this ).addClass( "cat-on" );
+                                open = 1;
+                            }else{
+                                $( this ).removeClass( "cat-on" );
+                                open = 0;
+                            }
+                            
+                            $( "#all-filter" ).toggle( "slow", function() {
+                                // Animation complete.
+                            });
+                        });
+                    </script>
+                </div>
+
+
+
+                <div class="filter-bar">
+                    <h3>Filters</h3>
+                    <div class="grey-line"></div>
+                    <button class="accordion">Sort by: <strong>Recommended</strong></button>
+                    <div class="panel">
+                        <label class="checkbox">
+                            <input type="checkbox" />
+                            <span>Recommended</span>
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" />
+                            <span>Price (low to high)</span>
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" />
+                            <span>Price (high to low)</span>
+                        </label>
+                    </div>
+
+                    <button class="accordion">From-to: <strong>Apr - 30 Apr 2021</strong></button>
+                    <div class="panel calendar">
+                        <center>
+                            <script language="javascript" type="text/javascript">
+                            var day_of_week = new Array('Sun','Mon','Tue','Wed','Thu','Fri','Sat');
+                            var month_of_year = new Array('January','February','March','April','May','June','July','August','September','October','November','December');
+                            
+                            //  DECLARE AND INITIALIZE VARIABLES
+                            var Calendar = new Date();
+                            
+                            var year = Calendar.getFullYear();     // Returns year
+                            var month = Calendar.getMonth();    // Returns month (0-11)
+                            var today = Calendar.getDate();    // Returns day (1-31)
+                            var weekday = Calendar.getDay();    // Returns day (1-31)
+                            
+                            var DAYS_OF_WEEK = 7;    // "constant" for number of days in a week
+                            var DAYS_OF_MONTH = 31;    // "constant" for number of days in a month
+                            var cal;    // Used for printing
+                            
+                            Calendar.setDate(1);    // Start the calendar day at '1'
+                            Calendar.setMonth(month);    // Start the calendar month at now
+                            
+                            
+                            /* VARIABLES FOR FORMATTING
+                            NOTE: You can format the 'BORDER', 'BGCOLOR', 'CELLPADDING', 'BORDERCOLOR'
+                                  tags to customize your caledanr's look. */
+                            
+                            var TR_start = '<TR>';
+                            var TR_end = '</TR>';
+                            var highlight_start = '<TD WIDTH="30"><TABLE CELLSPACING=0 BORDER=1 BGCOLOR=DEDEFF BORDERCOLOR=CCCCCC><TR><TD WIDTH=20><B><CENTER>';
+                            var highlight_end   = '</CENTER></TD></TR></TABLE></B>';
+                            var TD_start = '<TD WIDTH="30"><CENTER>';
+                            var TD_end = '</CENTER></TD>';
+                            
+                            /* BEGIN CODE FOR CALENDAR
+                            NOTE: You can format the 'BORDER', 'BGCOLOR', 'CELLPADDING', 'BORDERCOLOR'
+                            tags to customize your calendar's look.*/
+                            
+                            cal =  '<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=0 BORDERCOLOR=BBBBBB><TR><TD>';
+                            cal += '<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=2>' + TR_start;
+                            cal += '<TD COLSPAN="' + DAYS_OF_WEEK + '" BGCOLOR="#EFEFEF"><CENTER><B>';
+                            cal += month_of_year[month]  + '   ' + year + '</B>' + TD_end + TR_end;
+                            cal += TR_start;
+                            
+                            //   DO NOT EDIT BELOW THIS POINT  //
+                            
+                            // LOOPS FOR EACH DAY OF WEEK
+                            for(index=0; index < DAYS_OF_WEEK; index++)
+                            {
+                            
+                            // BOLD TODAY'S DAY OF WEEK
+                            if(weekday == index)
+                            cal += TD_start + '<B>' + day_of_week[index] + '</B>' + TD_end;
+                            
+                            // PRINTS DAY
+                            else
+                            cal += TD_start + day_of_week[index] + TD_end;
+                            }
+                            
+                            cal += TD_end + TR_end;
+                            cal += TR_start;
+                            
+                            // FILL IN BLANK GAPS UNTIL TODAY'S DAY
+                            for(index=0; index < Calendar.getDay(); index++)
+                            cal += TD_start + '  ' + TD_end;
+                            
+                            // LOOPS FOR EACH DAY IN CALENDAR
+                            for(index=0; index < DAYS_OF_MONTH; index++)
+                            {
+                            if( Calendar.getDate() > index )
+                            {
+                              // RETURNS THE NEXT DAY TO PRINT
+                              week_day =Calendar.getDay();
+                            
+                              // START NEW ROW FOR FIRST DAY OF WEEK
+                              if(week_day == 0)
+                              cal += TR_start;
+                            
+                              if(week_day != DAYS_OF_WEEK)
+                              {
+                            
+                              // SET VARIABLE INSIDE LOOP FOR INCREMENTING PURPOSES
+                              var day  = Calendar.getDate();
+                            
+                              // HIGHLIGHT TODAY'S DATE
+                              if( today==Calendar.getDate() )
+                              cal += highlight_start + day + highlight_end + TD_end;
+                            
+                              // PRINTS DAY
+                              else
+                              cal += TD_start + day + TD_end;
+                              }
+                            
+                              // END ROW FOR LAST DAY OF WEEK
+                              if(week_day == DAYS_OF_WEEK)
+                              cal += TR_end;
+                              }
+                            
+                              // INCREMENTS UNTIL END OF THE MONTH
+                              Calendar.setDate(Calendar.getDate()+1);
+                            
+                            }// end for loop
+                            
+                            cal += '</TD></TR></TABLE></TABLE>';
+                            
+                            //  PRINT CALENDAR
+                            document.write(cal);
+                            
+                            //  End -->
+                            </script>
+                            </center>
+                            <div style="clear:both"></div>
+                    </div>
+
+                    <button class="accordion">{Category} Type</button>
+                    <div class="panel">
+                        lorem
+                    </div>
+
+                    <button class="accordion">Venues</button>
+                    <div class="panel">
+                        Lorem
+                    </div>
+
+                    <button class="accordion">Price per person</button>
+                    <div class="panel">
+                        Lorem
+                    </div>
+
+                    <button class="accordion">Mobile Friendly</button>
+                    <div class="panel">
+                        lorem
+                    </div>
+
+                    <span class="clear"><strong>
+                        <svg fill="#A0A4A7" width="12" height="12" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            viewBox="0 0 371.23 371.23" style="enable-background:new 0 0 371.23 371.23;" xml:space="preserve">
+                        <polygon points="371.23,21.213 350.018,0 185.615,164.402 21.213,0 0,21.213 164.402,185.615 0,350.018 21.213,371.23 
+                            185.615,206.828 350.018,371.23 371.23,350.018 206.828,185.615 "/>
+                        <g>
+                        </g>
+                        </svg>
+                    </strong> Clear all filters</span>
+
+                </div>
+            </div>
+            <div class="col-9">
+                <center><h2>Search Results for ‘{Search Input}’</h2></center>
+                <div class="banner">
+                    <div class="banner-grey-box"></div>
+                </div>
+                <section class="travel-service section">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="box-product">
+                                <div class="table-box">
+                                    <div class="table-cell">
+                                        <a href="./account-bucket.html">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24.173" height="27.84" viewBox="0 0 24.173 27.84">
+                                              <g id="Group_2444" data-name="Group 2444" transform="translate(-1343 -189)">
+                                                <path id="Path_710" data-name="Path 710" d="M3190.5-2717.608l-11.086-7.186-11.086,7.186v-25H3190.5Z" transform="translate(-1824.331 2932.608)" fill="none" stroke="#fff" stroke-width="2"/>
+                                              </g>
+                                            </svg>
+                                          </a>
+                                    </div>
+                                </div>
+                                <div class="content-product">
+                                    <div class="container-title"><h4>Product Name</h4></div>
+                                    <div class="container-text"><p>Product Note runs over one, two or three lines and gives a brief overview of the product or service.</p></div>
+                                    <p class="rating"><span class=""><svg xmlns="http://www.w3.org/2000/svg" width="10.299" height="9.851" viewBox="0 0 10.299 9.851">
+                                      <path id="Path_424" data-name="Path 424" d="M151.56,1571.5l1.037,3.191a.087.087,0,0,0,.083.06h3.358a.087.087,0,0,1,.052.157l-2.717,1.974a.087.087,0,0,0-.032.1l1.038,3.191a.088.088,0,0,1-.056.11.089.089,0,0,1-.079-.013l-2.717-1.974a.086.086,0,0,0-.1,0l-2.717,1.974a.087.087,0,0,1-.122-.019.086.086,0,0,1-.013-.078l1.038-3.191a.087.087,0,0,0-.032-.1l-2.717-1.974a.087.087,0,0,1,.052-.157h3.358a.088.088,0,0,0,.083-.06l1.037-3.191a.087.087,0,0,1,.167,0Z" transform="translate(-146.327 -1570.935)" fill="#f48b1b" stroke="#f38b1a" stroke-miterlimit="10" stroke-width="1"/>
+                                    </svg>4.0 </span>1 rating</p>
+                                    <p class="range-price">£00.00 - £00.00</p>
+                                </div>
+    
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="box-product">
+                                <div class="table-box">
+                                    <div class="table-cell">
+                                        <a href="./account-bucket.html">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24.173" height="27.84" viewBox="0 0 24.173 27.84">
+                                              <g id="Group_2444" data-name="Group 2444" transform="translate(-1343 -189)">
+                                                <path id="Path_710" data-name="Path 710" d="M3190.5-2717.608l-11.086-7.186-11.086,7.186v-25H3190.5Z" transform="translate(-1824.331 2932.608)" fill="none" stroke="#fff" stroke-width="2"/>
+                                              </g>
+                                            </svg>
+                                          </a>
+                                    </div>
+                                </div>
+                                <div class="content-product">
+                                    <div class="container-title"><h4>Product Name</h4></div>
+                                    <div class="container-text"><p>Product Note runs over one, two or three lines and gives a brief overview of the product or service.</p></div>
+                                    <p class="rating"><span class=""><svg xmlns="http://www.w3.org/2000/svg" width="10.299" height="9.851" viewBox="0 0 10.299 9.851">
+                                      <path id="Path_424" data-name="Path 424" d="M151.56,1571.5l1.037,3.191a.087.087,0,0,0,.083.06h3.358a.087.087,0,0,1,.052.157l-2.717,1.974a.087.087,0,0,0-.032.1l1.038,3.191a.088.088,0,0,1-.056.11.089.089,0,0,1-.079-.013l-2.717-1.974a.086.086,0,0,0-.1,0l-2.717,1.974a.087.087,0,0,1-.122-.019.086.086,0,0,1-.013-.078l1.038-3.191a.087.087,0,0,0-.032-.1l-2.717-1.974a.087.087,0,0,1,.052-.157h3.358a.088.088,0,0,0,.083-.06l1.037-3.191a.087.087,0,0,1,.167,0Z" transform="translate(-146.327 -1570.935)" fill="#f48b1b" stroke="#f38b1a" stroke-miterlimit="10" stroke-width="1"/>
+                                    </svg>4.0 </span>1 rating</p>
+                                    <p class="range-price">£00.00 - £00.00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="box-product">
+                                <div class="table-box">
+                                    <div class="table-cell">
+                                        <a href="./account-bucket.html">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24.173" height="27.84" viewBox="0 0 24.173 27.84">
+                                              <g id="Group_2444" data-name="Group 2444" transform="translate(-1343 -189)">
+                                                <path id="Path_710" data-name="Path 710" d="M3190.5-2717.608l-11.086-7.186-11.086,7.186v-25H3190.5Z" transform="translate(-1824.331 2932.608)" fill="none" stroke="#fff" stroke-width="2"/>
+                                              </g>
+                                            </svg>
+                                          </a>
+                                    </div>
+                                </div>
+                                <div class="content-product">
+                                    <div class="container-title"><h4>Product Name</h4></div>
+                                    <div class="container-text"><p>Product Note runs over one, two or three lines and gives a brief overview of the product or service.</p></div>
+                                    <p class="rating"><span class=""><svg xmlns="http://www.w3.org/2000/svg" width="10.299" height="9.851" viewBox="0 0 10.299 9.851">
+                                      <path id="Path_424" data-name="Path 424" d="M151.56,1571.5l1.037,3.191a.087.087,0,0,0,.083.06h3.358a.087.087,0,0,1,.052.157l-2.717,1.974a.087.087,0,0,0-.032.1l1.038,3.191a.088.088,0,0,1-.056.11.089.089,0,0,1-.079-.013l-2.717-1.974a.086.086,0,0,0-.1,0l-2.717,1.974a.087.087,0,0,1-.122-.019.086.086,0,0,1-.013-.078l1.038-3.191a.087.087,0,0,0-.032-.1l-2.717-1.974a.087.087,0,0,1,.052-.157h3.358a.088.088,0,0,0,.083-.06l1.037-3.191a.087.087,0,0,1,.167,0Z" transform="translate(-146.327 -1570.935)" fill="#f48b1b" stroke="#f38b1a" stroke-miterlimit="10" stroke-width="1"/>
+                                    </svg>4.0 </span>1 rating</p>
+                                    <p class="range-price">£00.00 - £00.00</p>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                  </section>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
+      });
+    }
+</script>
+
+<div class="footer">footer</div>
+
+<div class="navigation">
+	<a class="next" href="index.html">Next</a>
+	<a class="prev" href="blog-page-inner.html">Prev</a>
+</div>
+</html>

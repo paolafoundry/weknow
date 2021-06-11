@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset='utf-8' />
+    <link href='assets/fullcalendar/main.css' rel='stylesheet' />
+    <script src='assets/fullcalendar/main.js'></script>
+    <script>
+
+      document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth'
+        });
+        calendar.render();
+      });
+
+    </script>
+
+	<link rel="stylesheet" href="style/style.css" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="header-date">
+        <div class="content-block">
+            <div class="left-section">
+                <a href="" class="back">
+                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        viewBox="0 0 240.823 240.823" style="enable-background:new 0 0 240.823 240.823;" xml:space="preserve">
+                    <g><path id="Chevron_Right" d="M57.633,129.007L165.93,237.268c4.752,4.74,12.451,4.74,17.215,0c4.752-4.74,4.752-12.439,0-17.179
+                            l-99.707-99.671l99.695-99.671c4.752-4.74,4.752-12.439,0-17.191c-4.752-4.74-12.463-4.74-17.215,0L57.621,111.816
+                            C52.942,116.507,52.942,124.327,57.633,129.007z"/><g></g><g></g><g></g><g></g><g></g><g></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
+                    </svg>
+                </a>
+                <a href="single-product.html"><img class="logo" src="assets/images/logo.png"></a>
+            </div>
+            <center>
+                <h2>Wicked</h2>
+                <p>Apollo Victoria Theatre, 17 Wilton Road, London, SW1V 1LG</p>
+            </center>
+        </div>
+    </div>
+
+    <div class="date-time">
+            <div class="row">
+                <div class="col-7 white-col">
+                        <div class="content-block">
+                            <h2>Choose a date and time</h2>
+                            <div class="grey-line"></div>
+                            <div id='calendar'></div>
+                
+                            <h2>Choose your seats</h2>
+                            <div class="grey-line"></div>
+                            <div class="grey-box">iframe</div>
+
+                        </div>
+                </div>
+                <div class="col-5 grey-col">
+                    <div class="grey-col-content">
+                        <div class="content-block">
+                            <div class="selection">
+                                <h2>Your selection</h2>
+                                <div class="grey-line"></div>
+                                <div class="list-selection">
+                                    <ul>
+                                        <li><div class="status-1"></div><strong>Stalls D19</strong><span class="left-span">21 June 2021 19:30 PM</span> <div class="right-li"><span>£00.00</span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><defs><style>.a{fill:#575a5c;}.b{fill:#fbfbfb;}</style></defs><path class="a" d="M10,0A10,10,0,1,1,0,10,10,10,0,0,1,10,0Z"/><g transform="translate(2.789 10.156) rotate(-45)"><path class="b" d="M4.052,4.2V1.024A1.023,1.023,0,0,1,5.075,0h.086A1.024,1.024,0,0,1,6.185,1.024V4.2H9.213a1.024,1.024,0,0,1,1.024,1.024h0A1.024,1.024,0,0,1,9.213,6.25H6.185V9.471a1.024,1.024,0,0,1-1.024,1.024H5.075A1.023,1.023,0,0,1,4.052,9.471V6.25H1.023A1.024,1.024,0,0,1,0,5.226H0A1.024,1.024,0,0,1,1.023,4.2Z"/></g></svg></div></li>
+                                        <li><div class="status-1"></div><strong>Stalls D19</strong><span class="left-span">21 June 2021 19:30 PM</span> <div class="right-li"><span>£00.00</span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><defs><style>.a{fill:#575a5c;}.b{fill:#fbfbfb;}</style></defs><path class="a" d="M10,0A10,10,0,1,1,0,10,10,10,0,0,1,10,0Z"/><g transform="translate(2.789 10.156) rotate(-45)"><path class="b" d="M4.052,4.2V1.024A1.023,1.023,0,0,1,5.075,0h.086A1.024,1.024,0,0,1,6.185,1.024V4.2H9.213a1.024,1.024,0,0,1,1.024,1.024h0A1.024,1.024,0,0,1,9.213,6.25H6.185V9.471a1.024,1.024,0,0,1-1.024,1.024H5.075A1.023,1.023,0,0,1,4.052,9.471V6.25H1.023A1.024,1.024,0,0,1,0,5.226H0A1.024,1.024,0,0,1,1.023,4.2Z"/></g></svg></div></li>
+                                        <li><div class="status-2"></div><strong>Stalls D19</strong><span class="left-span">21 June 2021 19:30 PM</span> <div class="right-li"><span>£00.00</span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><defs><style>.a{fill:#575a5c;}.b{fill:#fbfbfb;}</style></defs><path class="a" d="M10,0A10,10,0,1,1,0,10,10,10,0,0,1,10,0Z"/><g transform="translate(2.789 10.156) rotate(-45)"><path class="b" d="M4.052,4.2V1.024A1.023,1.023,0,0,1,5.075,0h.086A1.024,1.024,0,0,1,6.185,1.024V4.2H9.213a1.024,1.024,0,0,1,1.024,1.024h0A1.024,1.024,0,0,1,9.213,6.25H6.185V9.471a1.024,1.024,0,0,1-1.024,1.024H5.075A1.023,1.023,0,0,1,4.052,9.471V6.25H1.023A1.024,1.024,0,0,1,0,5.226H0A1.024,1.024,0,0,1,1.023,4.2Z"/></g></svg></div></li>
+                                    </ul>
+                                    <a href="" class="btn-blue">Confirm selection</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+</body>
+<div class="footer">footer</div>
+
+<div class="navigation">
+	<a class="next" href="blog-page.html">Next</a>
+	<a class="prev" href="single-product.html">Prev</a>
+</div>
+
+</html>

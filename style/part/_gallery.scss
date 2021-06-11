@@ -1,0 +1,9 @@
+#gallery .slide{display: block!important;}
+#gallery .carousel{display: block!important;}
+#gallery .modal-content {padding: 0px!important;}
+#gallery .carousel-inner>.item>img{height: 83vh;}
+#gallery .carousel-indicators {bottom: -40px!important;}
+#gallery .carousel-control{background-image: linear-gradient(to right,rgba(0,0,0,0) 0,rgba(0,0,0,0) 100%)!important;background-color: transparent; text-shadow: none;}
+#gallery .carousel-control.left{left: -10%;}
+#gallery .carousel-control.right{right: -10%;}
+#gallery .modal-dialog {width: 100% !important;max-width: 85% !important;}

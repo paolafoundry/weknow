@@ -1,0 +1,249 @@
+.cart-main {
+  margin-top: 40px;
+  margin-bottom: 120px;
+  > h2 {
+    margin-bottom: 50px;
+    text-align: center;
+  }
+  .cart__inner {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 7fr 4fr;
+    column-gap: 30px;
+    @include respond-below(md) {
+      grid-template-columns: 1fr;
+      row-gap: 30px;
+    }
+  }
+  .cart__order {
+    margin-right: 30px;
+    @include respond-below(md) {
+      margin-right: 0px;
+    }
+    > a {
+      color: $color__main;
+      font-size: 14px;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    &-inner {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      column-gap: 30px;
+      padding: 10px 0px;
+      border-top: 1px solid $color__light-grey;
+      border-bottom: 1px solid $color__light-grey;
+      margin-bottom: 10px;
+      position: relative;
+      
+      @media (max-width: 675px) {
+        grid-template-columns: 1fr;
+      }
+    }
+    .bin-icon {
+      position: absolute;
+      top: 10px;
+      right: 0;
+      margin: 0 1em;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &-info {
+      > p {
+        margin-bottom: 16px;
+
+      }
+    }
+    .journey {
+      margin-bottom: 16px;
+      > p {
+        margin-bottom: 1px;
+        > span {
+          color: $color__grey;
+        }
+      }
+    }
+  }
+  .cart__summary {
+    box-shadow: 0px 3px 6px #00000029;
+    padding: 25px 40px 10px;
+    border-radius: 5px;
+    > h2 {
+      margin-bottom: 10px;
+    }
+    .cart-summary-text {
+      margin-bottom: 20px;
+    }
+    > p {
+      margin-bottom: 18px;
+      font-size: 15px;
+      background-image: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='12.62px' height='12.62px' viewBox='0 0 352.62 352.62' style='enable-background:new 0 0 352.62 352.62;' xml:space='preserve'%3E%3Cg%3E%3Cpath d='M337.222,22.952c-15.912-8.568-33.66,7.956-44.064,17.748c-23.867,23.256-44.063,50.184-66.708,74.664 c-25.092,26.928-48.348,53.856-74.052,80.173c-14.688,14.688-30.6,30.6-40.392,48.96c-22.032-21.421-41.004-44.677-65.484-63.648 c-17.748-13.464-47.124-23.256-46.512,9.18c1.224,42.229,38.556,87.517,66.096,116.28c11.628,12.24,26.928,25.092,44.676,25.704 c21.42,1.224,43.452-24.48,56.304-38.556c22.645-24.48,41.005-52.021,61.812-77.112c26.928-33.048,54.468-65.485,80.784-99.145 C326.206,96.392,378.226,44.983,337.222,22.952z M26.937,187.581c-0.612,0-1.224,0-2.448,0.611 c-2.448-0.611-4.284-1.224-6.732-2.448l0,0C19.593,184.52,22.653,185.132,26.937,187.581z'/%3E%3C/g%3E%3C/svg%3E");
+      background-position-y: 3px;
+      padding-left: 20px;
+    }
+    .cart-total {
+      display: flex;
+      justify-content: space-between;
+      > p {
+        font-weight: bold;
+        font-size: 18px;
+      }
+    }
+    .btn {
+      width: 100%;
+      margin: 20px 0px 0px;
+    }
+    .payment-ico {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+    }
+  }
+}
+
+.upselling__cart {
+  margin-bottom: 90px;
+  &-inner {
+    > h2 {
+      text-align: center;
+    }
+  }
+  &-cards {
+    max-width: 695px;
+    margin: auto;
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    @include respond-below(sm) {
+      grid-template-columns: 1fr 1fr;
+    }
+    .btn {
+      background-color: $color__text;
+      width: 100%;
+      &:hover {
+        background-color: $color__hover;
+      }
+    }
+    .site-card {
+      .site-card__image {
+        svg {
+          path {
+            stroke: $color__text;
+          }
+          &:hover {
+            path {
+              fill: $color__text;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.upselling__cart-cards.grid-four {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  max-width: 100%;
+  row-gap: 30px;
+  @include respond-below(md) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+#upsellModal {
+  .modal-body {
+    padding: 10px 0px 20px;
+  }
+  .modal-img {
+    @include respond-below(sm) {
+      display: none;
+    }
+  }
+  .modal-dialog {
+    @include respond-below(sm) {
+      margin: 0px;
+    }
+  }
+  .product-info {
+    .grey-line {
+      margin: 8px 0px;
+    }
+    a {
+      font-size: 15px;
+    }
+    .h3 {
+      font-size: 16px;
+      line-height: 20px;
+      margin-bottom: 5px;
+    }
+    h2 {
+      font-size: 21px;
+    }
+    .qty__selector-module {
+      margin-top: 10px;
+      @include respond-below(sm) {
+        margin-top: 6px;
+      }
+    }
+    .btn {
+      margin-top: 20px;
+      width: 100%;
+      @include respond-below(sm) {
+        margin-top: 6px;
+      }
+    }
+  }
+}
+
+.cart__order-info-title {
+  width:75%;
+}
+
+.date,
+.terminal {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+}
+
+// Alterations in cart summary *******************************
+.date-summary {
+  input {
+    width: 100%;
+    border: none;
+    border: 1px solid $color__light-grey;
+    border-radius: 5px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='12.728' height='6.364' viewBox='0 0 12.728 6.364'%3E%3Cpath id='Path_782' data-name='Path 782' d='M803.324,49.98l-6.364,6.364L790.6,49.98Z' transform='translate(-790.596 -49.98)' fill='%2304141c'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position-x: 98%;
+    background-position-y: 50%;
+    padding: 0.5rem;
+  }
+}
+
+.terminal-container {
+  
+  .terminal-summary {
+    width: 100%;
+    border: none;
+    border: 1px solid $color__light-grey;
+    border-radius: 5px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='12.728' height='6.364' viewBox='0 0 12.728 6.364'%3E%3Cpath id='Path_782' data-name='Path 782' d='M803.324,49.98l-6.364,6.364L790.6,49.98Z' transform='translate(-790.596 -49.98)' fill='%2304141c'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position-x: 98%;
+    background-position-y: 50%;
+    padding: 0.5rem;
+  }
+}

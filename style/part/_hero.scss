@@ -1,0 +1,70 @@
+.hero {
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background: #1b2734 0% 0% no-repeat padding-box;
+    opacity: 0.2;
+    z-index: 0;
+  }
+  &__inner {
+    position: absolute;
+    top: 46%;
+    transform: translateY(-50%);
+    z-index: 2;
+    @include respond-below(md) {
+      top: 40%;
+    }
+    > h1 {
+      color: $color__bright;
+      margin-bottom: 36px;
+      @include respond-below(lg) {
+        margin-bottom: 20px;
+      }
+      @include respond-below(md) {
+        margin-bottom: 10px;
+        font-size: 37px;
+      }
+    }
+    .btn {
+      padding: 0px 50px;
+      @include respond-below(md) {
+        padding: 0px 20px;
+      }
+    }
+  }
+  &__banner {
+    min-height: 60px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    padding: 0px 15px;
+    z-index: 5;
+    position: relative;
+    @include respond-below(sm) {
+      padding: 5px 15px;
+      > p {
+        font-size: 14px;
+      }
+    }
+    span {
+      font-weight: bold;
+    }
+  }
+  &__image {
+    display: none;
+    @include respond-above(md) {
+      display: block;
+    }
+  }
+  &__image-mobile {
+    display: block;
+    @include respond-above(md) {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+.title{display: block; max-width: 812px; margin: 55px auto;}
+.title h1{color: #04141C; font-size: 50px; line-height: 75px;letter-spacing: -0.25px; margin-top: 12px; margin-bottom: 27px;font-weight: 600;}
+.title span{color: #575A5C; font-size: 17px; line-height: 26px; display: block;}
+
+.media-logos{margin-bottom: 55px;}
+.media-logos svg{width: 20px; height: 20px;margin-right: 20px;}
+.media-logos a:hover svg path{fill: #00A6D3!important;}
+
+.hero-image{display: block; width: 100%; height: 700px; object-fit: cover; margin-bottom: 35px;}
+
+.grey-box-img{border-radius: 10px; margin: 0 0 27px; display: block; width: 100%; background-color: #F4F4F4; height: 180px;}
+
+.content .container{max-width: 1088px!important;}
+.content p, .content h4{max-width: 810px; margin: 0 auto;}
+.content p{font-size: 17px; line-height: 25px; color: #575A5C; font-weight: 500; margin-bottom: 30px;}
+.content a{color: #00A6D3!important; font-size: 17px; line-height: 25px; font-weight: 500;}
+.content h4{margin: 20px auto 13px; color: #04141C; font-weight: 600;font-size: 21px; line-height: 32px;}
+.content img{display: block; width: 100%; border-radius: 10px; height: 550px; object-fit: cover; margin-bottom: 60px;}
+.content .caption{color: #575A5C; font-size: 14px; line-height: 21px; display: block; text-align: right; position: relative; top: -50px;}
+
+.box-share img{width: auto;height: auto!important;}
+.box-share .right-col{text-align: right;}
+.box-share .media-logos svg{margin-right: 0; margin-left: 20px;}
+
+.enqueries{margin-bottom: 110px;}
+.enqueries h4{margin: 0;}
+.enqueries p,.enqueries a{margin: 0; font-size: 17px;line-height: 26px; font-weight: normal;}
+.enqueries .grey-line{margin: 10px 0;}
+
+.more-post{margin-bottom: 80px;}
+.more-post h2{color: #04141C; font-size: 27px; line-height: 41px; letter-spacing: -0.14px; margin: 0 0 25px; font-weight: 600;}
+.box-more-blog img{border-radius: 10px; height: 217px; object-fit: cover; margin: 0 0 27px;display: block;width: 100%;}
+.box-more-blog span{color: #575A5C; font-size: 14px; line-height: 20px; display: block; margin-bottom: 18px;}
+.box-more-blog h2{color: #04141C; font-size: 21px; line-height: 30px; letter-spacing: -0.14px; font-weight: 600; margin-bottom: 16px;}
+.box-more-blog p{color: #575A5C; font-size: 17px; line-height: 20px; }
+
+@media(max-width: 840px){
+    .title{max-width: 100%; margin: 55px 15px;}
+}
+@media(max-width: 600px){
+    .title h1{font-size: 27px; line-height: 41px; letter-spacing: -0.14px;}
+    .content p{font-size: 16px; line-height: 24px;}
+    .content h4{font-size: 16px; line-height: 24px;}
+    .box-share .col-6{flex: 0 0 100%;max-width: 100%; text-align: center!important;}
+    .box-share img{margin: 0 auto 18px;}
+    .box-share .media-logos svg{margin: 0 15px 0;}
+    .content img, .hero-image{height: 260px;}
+}

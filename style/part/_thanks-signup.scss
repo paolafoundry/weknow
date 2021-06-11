@@ -1,0 +1,30 @@
+.message-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #EAECEE;
+  padding: 1rem;
+  color: #04141C;
+  .message-title {
+    margin-bottom: 20px;
+    font-weight: lighter;
+  }
+  .message-content {
+    margin-bottom: 20px;
+  }
+  .message-btn {
+    background: #00A6D3;
+    color: #fff;
+    border-radius: 5px;
+    display: flex;
+    width: 260px;
+    height: 54px;
+    justify-content: center;
+    align-items: center;
+    font-size: 17px;
+    margin-top: 20px;
+    transition: all 0.5s ease;
+    &:hover {
+      background: #008bb2;
+    }
+  }
+}
